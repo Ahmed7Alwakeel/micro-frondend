@@ -10,6 +10,7 @@ const prodConfig = {
     output:{
         //any file will be fileName.hash.js
         filename: '[name].[contenthash].js',
+        publicPath: '/container/latest/',
     },
     plugins: [
         new ModuleFederationPlugin({
