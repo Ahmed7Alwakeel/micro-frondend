@@ -1,14 +1,13 @@
 import React from 'react';
 import MarketingApp from './components/MarketingApp';
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Header from './components/Header';
 
 export default () => {
-  const navigate = useNavigate();
   return (
-    <div>
-      <h1 onClick={() => navigate("/")}>App</h1>
-      <hr />
+    <BrowserRouter>
+      <Header />
       <MarketingApp />
-    </div>
+    </BrowserRouter>
   );
 };
