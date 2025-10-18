@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -11,7 +11,7 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import { Link as RouterLink, useHistory, useParams } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -141,13 +141,6 @@ const footers = [
 
 export default function Pricing() {
   const classes = useStyles();
-  const history = useHistory();
-  const { id } = useParams();
-  useEffect(() => {
-    if (id) {
-      history.replace("/pricing"); // removes the /id part without reloading
-    }
-  }, [id, history]);
 
   return (
     <React.Fragment>
@@ -219,7 +212,7 @@ export default function Pricing() {
                 <CardActions>
                   <Button
                     component={RouterLink}
-                    to="/"
+                    to="/auth/signup"
                     fullWidth
                     color="primary"
                   >

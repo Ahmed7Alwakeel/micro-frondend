@@ -6,12 +6,14 @@ const packageJson = require('../package.json');
 
 const devConfig = {
   mode: 'development',
-  devServer: {
-    port: 8081,
-    historyApiFallback: true,
-  },
   output: {
-    publicPath: "http://localhost:8082/", // ✅ fixes remoteEntry path issue
+    publicPath: 'http://localhost:8082/',
+  },
+  devServer: {
+    port: 8082,
+    historyApiFallback: {
+      historyApiFallback: true,
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
