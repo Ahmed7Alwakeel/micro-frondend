@@ -21,5 +21,5 @@ export default () => {
     history.listen(onParentNavigate);
   }, []);
 
-  return <div ref={ref} key={history.location.pathname}/>;
+  return <div ref={ref} key={"auth"}/>;
 };
