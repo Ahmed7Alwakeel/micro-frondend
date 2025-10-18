@@ -11,14 +11,14 @@ const devConfig = {
     historyApiFallback: true,
   },
   output: {
-    publicPath: "http://localhost:8081/", // ✅ fixes remoteEntry path issue
+    publicPath: "http://localhost:8082/", // ✅ fixes remoteEntry path issue
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'marketing',
+      name: 'auth',
       filename: 'remoteEntry.js',
       exposes: {
-        './MarketingApp': './src/bootstrap',
+        './AuthApp': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),
